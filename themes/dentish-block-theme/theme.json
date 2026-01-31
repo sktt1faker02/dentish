@@ -1,0 +1,66 @@
+{
+  "version": 3,
+  "settings": {
+    "typography": {
+      "fontFamilies": [],
+      "fontStyle": false,
+      "fontWeight": false,
+      "letterSpacing": false,
+      "textDecoration": false,
+      "lineHeight": false,
+      "textTransform": false,
+      "dropCap": false,
+      "customFontSize": false,
+      "fontSizes": [],
+      "defaultFontSizes": false
+    },
+
+    "blocks": {
+      "core/button": {
+        "border": {
+          "color": false,
+          "radius": false,
+          "style": false,
+          "width": false
+        }
+      }
+    },
+    "layout": {
+      "contentSize": "840px",
+      "wideSize": "1200px"
+    },
+    "color": {
+      "background": true,
+      "text": false,
+      "link": false,
+      "custom": false,
+      "defaultPalette": false,
+      "duotone": [],
+      "customDuotone": false,
+      "gradients": [],
+      "customGradient": false,
+      "palette": [
+        {
+          "name": "Primary",
+          "color": "#001a78",
+          "slug": "primary"
+        },
+        {
+          "name": "Secondary",
+          "color": "#00ce9c",
+          "slug": "secondary"
+        },
+        {
+          "name": "Black",
+          "color": "#000000",
+          "slug": "black"
+        },
+        {
+          "name": "White",
+          "color": "#ffffff",
+          "slug": "white"
+        }
+      ]
+    }
+  }
+}

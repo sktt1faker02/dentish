@@ -1,0 +1,9 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "myblocks/blocks-blog",
+  "version": "0.1.0",
+  "title": "Blocks Blog",
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php"
+}

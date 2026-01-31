@@ -1,0 +1,15 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "myblocks/hero-banner",
+  "version": "0.1.0",
+  "title": "Hero Banner",
+  "editorScript": "file:./index.js",
+  "attributes": {
+    "isHero": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "render": "file:./render.php"
+}

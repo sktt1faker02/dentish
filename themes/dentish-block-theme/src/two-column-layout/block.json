@@ -1,0 +1,14 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "myblocks/two-column-layout",
+  "version": "0.1.0",
+  "title": "Two Column Layout",
+  "attributes": {
+    "imageId": { "type": "number" },
+    "imageUrl": { "type": "string" },
+    "reverse": { "type": "boolean", "default": false }
+  },
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php"
+}

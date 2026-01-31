@@ -1,0 +1,258 @@
+@use "reset";
+@use "variables" as var;
+@use "base";
+
+/* Header */
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem;
+  position: relative;
+  overflow: hidden;
+
+  a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  span {
+    font-size: 24px;
+    font-weight: var.$fw-bold;
+    color: var.$clr-primary;
+  }
+
+  i {
+    font-size: 1.5rem;
+
+    &:hover {
+      color: var.$clr-primary;
+    }
+  }
+
+  button {
+    all: unset;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+  }
+
+  .mobile-nav i {
+    transition: transform 0.25s ease, opacity 0.2s ease;
+  }
+
+  .mobile-nav.active i {
+    transform: rotate(90deg) scale(1);
+  }
+
+  .main-nav {
+    position: fixed;
+    background-color: #fff;
+    box-shadow: var.$shadow;
+    width: 65%;
+    min-height: 100vh;
+    top: 0;
+    left: 0;
+    transform: translateX(-999px);
+    transition: 0.3s;
+    z-index: 10;
+
+    &.active {
+      transform: translateX(0);
+      background-color: var.$clr-primary;
+    }
+
+    &.active .navigation-logo {
+      background-color: #fff;
+      width: fit-content;
+      padding: 0.5rem;
+      margin-left: 20px;
+      position: absolute;
+      bottom: 10%;
+    }
+  }
+
+  .menu-primary-menu-container {
+    .main-menu {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      padding-top: 1.25rem;
+      padding-left: 1.25rem;
+    }
+  }
+
+  .main-menu {
+    a {
+      font-weight: var.$fw-medium;
+      color: var.$clr-text-white;
+
+      &:hover {
+        color: var.$clr-secondary;
+      }
+    }
+
+    li:not(:last-child) {
+      margin-bottom: 0.85rem;
+    }
+  }
+
+  .current-menu-item > a {
+    color: var.$clr-secondary;
+  }
+
+  .nav-overlay {
+    position: fixed;
+    inset: 0; /* top:0; right:0; bottom:0; left:0 */
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9; /* lower than your mobile nav, higher than page */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+}
+
+// .admin-bar .main-header {
+//   top: 32px;
+// }
+
+.main-footer {
+  padding: 1.25rem;
+  display: grid;
+  gap: 2rem;
+
+  h4 {
+    font-size: 14px;
+    color: var.$clr-primary;
+    margin-bottom: 10px;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .footer-col-1 {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+
+    p {
+      font-weight: var.$fw-medium;
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      position: relative;
+      left: -5px;
+    }
+
+    .footer-socials i {
+      font-size: 1.5rem;
+      color: var.$clr-primary;
+
+      &:hover {
+        color: var.$clr-secondary;
+      }
+    }
+  }
+
+  .footer-logo {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .footer-logo span {
+    font-size: 24px;
+    font-weight: var.$fw-bold;
+    color: var.$clr-primary;
+  }
+
+  .footer-col-2 {
+    li:not(:last-child) {
+      // margin-bottom: 0.5rem;
+    }
+
+    a {
+      text-decoration: none;
+      color: var.$clr-black;
+      font-weight: var.$fw-medium;
+      font-size: 12px;
+    }
+  }
+
+  .footer-col-3 {
+    .working-hours {
+      font-size: 12px;
+      color: var.$clr-black;
+      font-weight: var.$fw-medium;
+    }
+
+    .day {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .footer-col-4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    a:first-of-type {
+      margin-bottom: 1rem;
+    }
+  }
+
+  .footer-copyright {
+    text-align: center;
+    font-size: 12px;
+    opacity: 0.4;
+  }
+}
+
+/* 
+Hero Section
+*/
+
+.front-page-hero {
+  background-color: var.$clr-primary;
+
+  h1 {
+    text-align: center;
+    color: var.$clr-white;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    color: var.$clr-white;
+    text-align: center;
+    padding-inline: 20px;
+  }
+
+  a {
+    display: inline-block;
+  }
+}
+
+@media (max-width: 782px) {
+  .admin-bar .main-header .main-nav.active {
+    top: 46px;
+  }
+}

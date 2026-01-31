@@ -1,0 +1,382 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* Colors */
+/* Typography */
+/* Utilities */
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 800;
+}
+
+h1 {
+  font-size: clamp(2rem, 1.5229rem + 1.5267vw, 2.5rem);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 1.0229rem + 1.5267vw, 2rem);
+}
+
+h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+a:hover {
+  color: #001a78;
+}
+
+p {
+  font-size: 14px;
+}
+
+.primary-btn {
+  padding: 10px 20px;
+  border: 2px solid #001a78;
+  border-radius: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  color: #001a78;
+  transition: all 0.3s ease;
+  min-width: 231px;
+  text-align: center;
+}
+.primary-btn i {
+  margin-right: 5px;
+}
+.primary-btn:hover {
+  background-color: #001a78;
+  color: #fff;
+}
+
+.secondary-btn {
+  border: 2px solid transparent;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: #00ce9c;
+  font-weight: 700;
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.3s ease;
+  min-width: 231px;
+  text-align: center;
+}
+.secondary-btn i {
+  margin-right: 5px;
+}
+.secondary-btn:hover {
+  background-color: #fff;
+  color: #00ce9c;
+  border-color: #00ce9c;
+}
+
+.section-spacing {
+  padding: 80px 0;
+}
+
+.section-pt {
+  padding-top: 80px;
+}
+
+.section-pb {
+  padding-bottom: 80px;
+}
+
+/* Header */
+body.no-scroll {
+  overflow: hidden;
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem;
+  position: relative;
+  overflow: hidden;
+}
+.main-header a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.main-header span {
+  font-size: 24px;
+  font-weight: 700;
+  color: #001a78;
+}
+.main-header i {
+  font-size: 1.5rem;
+}
+.main-header i:hover {
+  color: #001a78;
+}
+.main-header button {
+  all: unset;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+.main-header .mobile-nav i {
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+.main-header .mobile-nav.active i {
+  transform: rotate(90deg) scale(1);
+}
+.main-header .main-nav {
+  position: fixed;
+  background-color: #fff;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  width: 65%;
+  min-height: 100vh;
+  top: 0;
+  left: 0;
+  transform: translateX(-999px);
+  transition: 0.3s;
+  z-index: 10;
+}
+.main-header .main-nav.active {
+  transform: translateX(0);
+  background-color: #001a78;
+}
+.main-header .main-nav.active .navigation-logo {
+  background-color: #fff;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.5rem;
+  margin-left: 20px;
+  position: absolute;
+  bottom: 10%;
+}
+.main-header .menu-primary-menu-container .main-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-top: 1.25rem;
+  padding-left: 1.25rem;
+}
+.main-header .main-menu a {
+  font-weight: 500;
+  color: #fff;
+}
+.main-header .main-menu a:hover {
+  color: #00ce9c;
+}
+.main-header .main-menu li:not(:last-child) {
+  margin-bottom: 0.85rem;
+}
+.main-header .current-menu-item > a {
+  color: #00ce9c;
+}
+.main-header .nav-overlay {
+  position: fixed;
+  inset: 0; /* top:0; right:0; bottom:0; left:0 */
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9; /* lower than your mobile nav, higher than page */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.main-footer {
+  padding: 1.25rem;
+  display: grid;
+  gap: 2rem;
+}
+.main-footer h4 {
+  font-size: 14px;
+  color: #001a78;
+  margin-bottom: 10px;
+}
+.main-footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.main-footer .footer-col-1 {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.main-footer .footer-col-1 p {
+  font-weight: 500;
+}
+.main-footer .footer-col-1 .footer-socials {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  position: relative;
+  left: -5px;
+}
+.main-footer .footer-col-1 .footer-socials i {
+  font-size: 1.5rem;
+  color: #001a78;
+}
+.main-footer .footer-col-1 .footer-socials i:hover {
+  color: #00ce9c;
+}
+.main-footer .footer-logo {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.main-footer .footer-logo span {
+  font-size: 24px;
+  font-weight: 700;
+  color: #001a78;
+}
+.main-footer .footer-col-2 a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  font-size: 12px;
+}
+.main-footer .footer-col-3 .working-hours {
+  font-size: 12px;
+  color: #000;
+  font-weight: 500;
+}
+.main-footer .footer-col-3 .day {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 0.5rem;
+}
+.main-footer .footer-col-4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main-footer .footer-col-4 a:first-of-type {
+  margin-bottom: 1rem;
+}
+.main-footer .footer-copyright {
+  text-align: center;
+  font-size: 12px;
+  opacity: 0.4;
+}
+
+/* 
+Hero Section
+*/
+.front-page-hero {
+  background-color: #001a78;
+}
+.front-page-hero h1 {
+  text-align: center;
+  color: #fff;
+}
+.front-page-hero .hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  color: #fff;
+  text-align: center;
+  padding-inline: 20px;
+}
+.front-page-hero a {
+  display: inline-block;
+}
+
+@media (max-width: 782px) {
+  .admin-bar .main-header .main-nav.active {
+    top: 46px;
+  }
+}

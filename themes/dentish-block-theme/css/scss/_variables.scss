@@ -1,0 +1,40 @@
+/* Colors */
+$clr-primary: #001a78;
+$clr-secondary: #00ce9c;
+$clr-text-color: #000;
+$clr-text-white: #fff;
+$clr-black: #000;
+$clr-white: #fff;
+$clr-light-green: #f4fffb;
+/* Typography */
+$ff-primary: "Roboto", sans-serif;
+
+$fw-thin: 100; // Hairline
+$fw-extralight: 200; // Ultra Light
+$fw-light: 300;
+$fw-regular: 400; // Normal
+$fw-medium: 500;
+$fw-semibold: 600;
+$fw-bold: 700;
+$fw-extrabold: 800; // Ultra Bold
+$fw-black: 900; // Heavy
+
+/* Utilities */
+$shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+$drop-shadow: 0px 1px 10px 0px rgba(188, 188, 188, 0.25);
+$rounded-corners: 20px;
+
+:root {
+  --section-spacing: 40px 20px;
+  --section-pt: 40px;
+  --section-pb: 40px;
+  --spacing-page-sides: 20px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --section-spacing: 80px 40px;
+    --section-pt: 80px;
+    --section-pb: 80px;
+  }
+}

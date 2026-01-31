@@ -1,0 +1,24 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "myblocks/generic-image",
+  "version": "0.1.0",
+  "title": "Generic Image",
+  "icon": "format-image",
+  "description": "A simple generic image block",
+  "attributes": {
+    "desktopId": {
+      "type": "number"
+    },
+    "desktopUrl": {
+      "type": "string"
+    },
+    "mobileId": {
+      "type": "number"
+    },
+    "mobileUrl": {
+      "type": "string"
+    }
+  },
+  "editorScript": "file:./index.js"
+}

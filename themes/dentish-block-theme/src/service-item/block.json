@@ -1,0 +1,17 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "myblocks/service-item",
+  "version": "0.1.0",
+  "title": "Service Item",
+  "editorScript": "file:./index.js",
+  "attributes": {
+    "iconId": {
+      "type": "number"
+    },
+    "iconUrl": {
+      "type": "string",
+      "default": "http://dentish.local/wp-content/uploads/2025/12/tooth-gum.svg"
+    }
+  }
+}

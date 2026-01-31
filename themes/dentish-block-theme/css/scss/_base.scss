@@ -1,0 +1,138 @@
+@use "./variables" as var;
+
+body {
+  font-family: var.$ff-primary;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: var.$fw-extrabold;
+  color: var.$clr-primary;
+}
+
+h1 {
+  font-size: clamp(2rem, 1.5229rem + 1.5267vw, 2.5rem);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 1.0229rem + 1.5267vw, 2rem);
+}
+
+h3 {
+  font-size: 1.125rem;
+  font-weight: var.$fw-semibold;
+}
+
+a {
+  text-decoration: none;
+  color: var.$clr-primary;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var.$clr-primary;
+}
+
+p {
+  font-size: 14px;
+}
+
+.primary-btn {
+  padding: 10px 20px;
+  border: 2px solid var.$clr-primary;
+  border-radius: 10px;
+  font-weight: var.$fw-bold;
+  text-decoration: none;
+  color: var.$clr-primary;
+  transition: all 0.3s ease;
+  min-width: 231px;
+  text-align: center;
+
+  i {
+    margin-right: 5px;
+  }
+
+  &:hover {
+    background-color: var.$clr-primary;
+    color: var.$clr-white;
+  }
+}
+
+.secondary-btn {
+  border: 2px solid transparent;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: var.$clr-secondary;
+  font-weight: var.$fw-bold;
+  text-decoration: none;
+  color: var.$clr-white;
+  transition: all 0.3s ease;
+  min-width: 231px;
+  text-align: center;
+
+  i {
+    margin-right: 5px;
+  }
+
+  &:hover {
+    background-color: var.$clr-white;
+    color: var.$clr-secondary;
+    border-color: var.$clr-secondary;
+  }
+}
+
+a.arrow-btn {
+  font-size: 12px;
+  font-weight: var.$fw-extrabold;
+  position: relative;
+  padding-right: 18px;
+
+  &::after {
+    content: "\f061";
+    font-family: "FontAwesome";
+    position: absolute;
+    right: 0;
+    top: 9px;
+    transform: translateY(-50%);
+    font-size: 12px;
+    transition: right 0.3s ease;
+  }
+
+  &:hover::after {
+    right: -5px;
+  }
+}
+
+.section-spacing {
+  padding: var(--section-spacing);
+}
+
+.section-spacing.not-hero {
+  padding-inline: 0;
+}
+
+.section-pt {
+  padding-top: var(--section-pt);
+}
+.section-pb {
+  padding-bottom: var(--section-pb);
+}
+
+.section-spacing-sides {
+  padding-inline: var(--spacing-page-sides);
+}
+
+.bg-light-green {
+  background-color: var.$clr-light-green;
+}
+
+span.label {
+  font-size: 1rem;
+  font-weight: var.$fw-medium;
+  color: var.$clr-secondary;
+  text-transform: uppercase;
+}
