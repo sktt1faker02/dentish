@@ -1,0 +1,50 @@
+# =========================
+# WordPress core ignores
+# =========================
+/uploads/
+/cache/
+/upgrade/
+/backup*
+
+# =========================
+# Plugin & theme caches
+# =========================
+/ai1wm-backups/
+/wflogs/          # Wordfence
+/wp-rocket-config/
+/wp-rocket/
+/litespeed/
+/w3tc-config/
+/elementor/css/
+/elementor/fonts/
+/elementor/tmp/
+/elementor/cache/
+
+# =========================
+# Logs & temp files
+# =========================
+*.log
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+
+# =========================
+# Environment / config
+# =========================
+.env
+.env.*
+php_errorlog
+
+# =========================
+# Node / build files (if any)
+# =========================
+node_modules/
+dist/
+build/
+
+# =========================
+# IDE / OS files
+# =========================
+.vscode/
+.idea/

@@ -126,8 +126,16 @@ a.arrow-btn {
   padding-inline: var(--spacing-page-sides);
 }
 
+.bg-primary {
+  background-color: var.$clr-primary;
+}
+
 .bg-light-green {
   background-color: var.$clr-light-green;
+}
+
+.bg-white {
+  background-color: var.$clr-white;
 }
 
 span.label {

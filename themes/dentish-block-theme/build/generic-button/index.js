@@ -21,6 +21,12 @@ const ourColors = [{
 }, {
   name: "reset",
   color: "#000000"
+}, {
+  name: "white",
+  color: "#fff"
+}, {
+  name: "light-green",
+  color: "#f4fffb"
 }];
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ourColors);
 

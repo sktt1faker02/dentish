@@ -1,6 +1,6 @@
+import ourColors from "../../inc/ourColors";
 import { PanelBody, ToggleControl, PanelRow, ColorPalette } from "@wordpress/components";
 import { useBlockProps, InnerBlocks, InspectorControls } from "@wordpress/block-editor";
-import ourColors from "../../inc/ourColors";
 
 export default function Edit(props) {
   // const handleChangeTopSpace = (value) => {
@@ -12,11 +12,12 @@ export default function Edit(props) {
   //   props.setAttributes({ addSpaceBottom: value });
   // };
 
-  const currentColorValue = ourColors.find((color) => color.name === props.attributes.colorName)?.color;
+  const currentColorValue = ourColors.find((c) => c.name === props.attributes.colorName)?.color;
   console.log(currentColorValue);
 
-  const handleColorChange = (color) => {
-    props.setAttributes({ colorName: color });
+  const handleColorChange = (colorValue) => {
+    const selectedColor = ourColors.find((c) => c.color === colorValue);
+    props.setAttributes({ colorName: selectedColor?.name });
   };
 
   return (
@@ -29,7 +30,7 @@ export default function Edit(props) {
         </PanelBody>
       </InspectorControls>
 
-      <div className="generic-intro section-spacing">
+      <div className={`generic-intro section-spacing bg-${props.attributes.colorName || "reset"}`}>
         <InnerBlocks allowedBlocks={["myblocks/generic-heading", "core/paragraph"]} />
       </div>
     </div>

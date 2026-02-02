@@ -10,6 +10,14 @@ return array(
 		'editorScript' => 'file:./index.js',
 		'render' => 'file:./render.php'
 	),
+	'blocks-pricing' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'myblocks/blocks-pricing',
+		'version' => '0.1.0',
+		'title' => 'Pricing Block',
+		'editorScript' => 'file:./index.js'
+	),
 	'generic-button' => array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
 		'apiVersion' => 3,
@@ -143,6 +151,24 @@ return array(
 		),
 		'editorScript' => 'file:./index.js',
 		'render' => 'file:./render.php'
+	),
+	'pricing-card' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'myblocks/pricing-card',
+		'version' => '0.1.0',
+		'title' => 'Pricing Card',
+		'attributes' => array(
+			'priceLabel' => array(
+				'type' => 'string',
+				'default' => '$45,00'
+			),
+			'heading' => array(
+				'type' => 'string',
+				'default' => 'Preventive and Dental Maintenance Services'
+			)
+		),
+		'editorScript' => 'file:./index.js'
 	),
 	'service-item' => array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',

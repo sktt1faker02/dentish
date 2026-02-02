@@ -1,5 +1,5 @@
-import { InnerBlocks } from "@wordpress/block-editor";
 import { registerBlockType } from "@wordpress/blocks";
+import { InnerBlocks } from "@wordpress/block-editor";
 import Edit from "./edit";
 import metadata from "./block.json";
 
@@ -7,7 +7,9 @@ registerBlockType(metadata.name, {
   edit: Edit,
   save: (props) => {
     return (
-      <div className={`generic-intro section-spacing bg-${props.attributes.colorName || "reset"}`}>
+      <div className="pricing-card">
+        <span className="price-label">{props.attributes.priceLabel}</span>
+        <h4>{props.attributes.heading}</h4>
         <InnerBlocks.Content />
       </div>
     );

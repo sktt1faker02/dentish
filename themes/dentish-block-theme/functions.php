@@ -47,5 +47,7 @@ function myblocks_myheader_block_init()
     register_block_type(__DIR__ . '/build/service-item');
     register_block_type(__DIR__ . '/build/blocks-blog');
     register_block_type(__DIR__ . '/build/generic-intro');
+    register_block_type(__DIR__ . '/build/blocks-pricing');
+    register_block_type(__DIR__ . '/build/pricing-card');
 }
 add_action('init', 'myblocks_myheader_block_init');

@@ -7,7 +7,7 @@ registerBlockType(metadata.name, {
   edit: Edit,
   save: (props) => {
     return (
-      <div className={`generic-intro section-spacing bg-${props.attributes.colorName || "reset"}`}>
+      <div className="pricing-container">
         <InnerBlocks.Content />
       </div>
     );
