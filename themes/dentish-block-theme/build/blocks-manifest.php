@@ -83,10 +83,6 @@ return array(
 		'version' => '0.1.0',
 		'title' => 'Generic Intro',
 		'attributes' => array(
-			'addSpaceTop' => array(
-				'type' => 'boolean',
-				'default' => false
-			),
 			'colorName' => array(
 				'type' => 'string',
 				'default' => 'primary'

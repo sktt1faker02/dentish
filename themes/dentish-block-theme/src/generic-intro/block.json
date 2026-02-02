@@ -5,7 +5,6 @@
   "version": "0.1.0",
   "title": "Generic Intro",
   "attributes": {
-    "addSpaceTop": { "type": "boolean", "default": false },
     "colorName": { "type": "string", "default": "primary" }
   },
   "editorScript": "file:./index.js"

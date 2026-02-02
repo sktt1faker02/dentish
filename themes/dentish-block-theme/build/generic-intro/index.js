@@ -32,7 +32,7 @@ const ourColors = [{
   \**************************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"myblocks/generic-intro","version":"0.1.0","title":"Generic Intro","attributes":{"addSpaceTop":{"type":"boolean","default":false},"colorName":{"type":"string","default":"primary"}},"editorScript":"file:./index.js"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"myblocks/generic-intro","version":"0.1.0","title":"Generic Intro","attributes":{"colorName":{"type":"string","default":"primary"}},"editorScript":"file:./index.js"}');
 
 /***/ },
 
@@ -58,12 +58,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function Edit(props) {
-  const handleChangeTopSpace = value => {
-    console.log(value);
-    props.setAttributes({
-      addSpaceTop: value
-    });
-  };
+  // const handleChangeTopSpace = (value) => {
+  //   console.log(value);
+  //   props.setAttributes({ addSpaceTop: value });
+  // };
+
+  // const handleChangeBottomSpace = (value) => {
+  //   props.setAttributes({ addSpaceBottom: value });
+  // };
+
   const currentColorValue = _inc_ourColors__WEBPACK_IMPORTED_MODULE_2__["default"].find(color => color.name === props.attributes.colorName)?.color;
   console.log(currentColorValue);
   const handleColorChange = color => {
@@ -74,14 +77,10 @@ function Edit(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)(),
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
         title: "Generic Intro Settings",
         initialOpen: true,
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ToggleControl, {
-          label: "Add Space Above",
-          checked: props.attributes.addSpaceTop,
-          onChange: handleChangeTopSpace
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelRow, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelRow, {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ColorPalette, {
             disableCustomColors: true,
             clearable: true,
@@ -89,10 +88,10 @@ function Edit(props) {
             value: currentColorValue,
             onChange: handleColorChange
           })
-        })]
+        })
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-      className: `generic-intro section-spacing-sides ${props.attributes.addSpaceTop ? "section-pt" : ""}`,
+      className: "generic-intro section-spacing",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InnerBlocks, {
         allowedBlocks: ["myblocks/generic-heading", "core/paragraph"]
       })
@@ -240,7 +239,7 @@ __webpack_require__.r(__webpack_exports__);
   edit: _edit__WEBPACK_IMPORTED_MODULE_2__["default"],
   save: props => {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: `generic-intro section-spacing-sides ${props.attributes.addSpaceTop ? "section-pt" : ""}`,
+      className: "generic-intro section-spacing",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InnerBlocks.Content, {})
     });
   }

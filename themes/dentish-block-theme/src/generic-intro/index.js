@@ -7,7 +7,7 @@ registerBlockType(metadata.name, {
   edit: Edit,
   save: (props) => {
     return (
-      <div className={`generic-intro section-spacing-sides ${props.attributes.addSpaceTop ? "section-pt" : ""}`}>
+      <div className="generic-intro section-spacing">
         <InnerBlocks.Content />
       </div>
     );
