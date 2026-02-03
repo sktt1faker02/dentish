@@ -187,6 +187,70 @@ return array(
 			)
 		)
 	),
+	'testimonial-card' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'myblocks/testimonial-card',
+		'version' => '0.1.0',
+		'title' => 'Testimonial Card',
+		'category' => 'widgets',
+		'icon' => 'admin-comments',
+		'description' => 'A single testimonial card with quote, image, name and location',
+		'parent' => array(
+			'myblocks/testimonials'
+		),
+		'attributes' => array(
+			'quote' => array(
+				'type' => 'string',
+				'default' => ''
+			),
+			'name' => array(
+				'type' => 'string',
+				'default' => ''
+			),
+			'location' => array(
+				'type' => 'string',
+				'default' => ''
+			),
+			'imageId' => array(
+				'type' => 'number',
+				'default' => 0
+			),
+			'imageUrl' => array(
+				'type' => 'string',
+				'default' => ''
+			)
+		),
+		'supports' => array(
+			'html' => false
+		),
+		'editorScript' => 'file:./index.js'
+	),
+	'testimonials' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'myblocks/testimonials',
+		'version' => '0.1.0',
+		'title' => 'Testimonials',
+		'category' => 'widgets',
+		'icon' => 'format-quote',
+		'description' => 'A testimonial carousel block with cards',
+		'attributes' => array(
+			'autoplay' => array(
+				'type' => 'boolean',
+				'default' => true
+			),
+			'autoplaySpeed' => array(
+				'type' => 'number',
+				'default' => 5000
+			)
+		),
+		'supports' => array(
+			'html' => false
+		),
+		'editorScript' => 'file:./index.js',
+		'viewScript' => 'file:./view.js'
+	),
 	'two-column-layout' => array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
 		'apiVersion' => 3,

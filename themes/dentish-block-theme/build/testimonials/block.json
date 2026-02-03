@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "myblocks/testimonials",
+  "version": "0.1.0",
+  "title": "Testimonials",
+  "category": "widgets",
+  "icon": "format-quote",
+  "description": "A testimonial carousel block with cards",
+  "attributes": {
+    "autoplay": {
+      "type": "boolean",
+      "default": true
+    },
+    "autoplaySpeed": {
+      "type": "number",
+      "default": 5000
+    }
+  },
+  "supports": {
+    "html": false
+  },
+  "editorScript": "file:./index.js",
+  "viewScript": "file:./view.js"
+}

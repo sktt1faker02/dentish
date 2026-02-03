@@ -60,3 +60,4 @@ Defined in `themes/dentish-block-theme/theme.json`:
 - **SVG Support** - SVG upload handling (used for logo)
 - **Yoast SEO** - Search optimization
 - **Regenerate Thumbnails** - Image processing utility
+

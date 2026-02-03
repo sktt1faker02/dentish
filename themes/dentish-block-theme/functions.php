@@ -6,6 +6,10 @@ function dentish_files()
     wp_enqueue_style('roboto-fonts', '//fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
     wp_enqueue_style('dentish_main_styles', get_theme_file_uri('/css/main.css'));
 
+    // Swiper.js for testimonials carousel
+    wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', array(), '11.0.0');
+    wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), '11.0.0', true);
+
     // Custom js
     wp_enqueue_script('dentish_custom_js', get_theme_file_uri('/src/js/custom.js'), array('jquery'), false, true);
 }
@@ -49,6 +53,8 @@ function myblocks_myheader_block_init()
     register_block_type(__DIR__ . '/build/generic-intro');
     register_block_type(__DIR__ . '/build/blocks-pricing');
     register_block_type(__DIR__ . '/build/pricing-card');
+    register_block_type(__DIR__ . '/build/testimonials');
+    register_block_type(__DIR__ . '/build/testimonial-card');
 }
 add_action('init', 'myblocks_myheader_block_init');
 

@@ -133,6 +133,7 @@ body.no-scroll {
   padding: 1.25rem;
   display: grid;
   gap: 2rem;
+  background-color: var.$clr-light-green;
 
   h4 {
     font-size: 14px;
@@ -520,10 +521,8 @@ Hero Section
 .pricing-container {
   display: grid;
   gap: 1rem;
-}
-
-.pricing-container {
   padding-inline: var(--spacing-page-sides);
+  padding-bottom: 40px;
 }
 
 .pricing-card {
@@ -577,4 +576,117 @@ Hero Section
       }
     }
   }
+}
+
+/* Testimonials Carousel - Swiper.js */
+
+.testimonials-block {
+  padding-inline: var(--spacing-page-sides);
+  overflow: hidden;
+  background: var.$clr-light-green;
+  padding-bottom: var(--section-pb);
+}
+
+.testimonials-swiper {
+  position: relative;
+  padding-bottom: 60px !important;
+}
+
+// Individual testimonial card
+.testimonial-card {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  border-radius: var.$rounded-corners;
+  overflow: hidden;
+  background: var.$clr-white;
+  box-shadow: var.$drop-shadow;
+  height: 100%;
+}
+
+// Quote section (dark blue)
+.testimonial-card__quote-section {
+  background: var.$clr-primary;
+  padding: 10px;
+  color: var.$clr-text-white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+}
+
+.testimonial-card__quote {
+  line-height: 1.6;
+  margin: 0 0 20px 0;
+  font-size: 10px;
+}
+
+.testimonial-card__name {
+  font-weight: var.$fw-bold;
+  margin: 0 0 3px 0;
+  font-size: 12px;
+}
+
+.testimonial-card__location {
+  color: #98a0be;
+  font-size: 12px;
+  font-weight: var.$fw-bold;
+}
+
+// Photo section (white)
+.testimonial-card__photo-section {
+  order: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var.$clr-white;
+  order: -1;
+  height: 100%;
+}
+
+.testimonial-card__image {
+  object-fit: cover;
+  height: 100%;
+}
+
+.testimonial-card__image-placeholder {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Swiper pagination (dots)
+.testimonials-swiper .swiper-pagination {
+  bottom: 10px;
+  position: absolute;
+}
+
+.testimonials-swiper .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: #ccc;
+  opacity: 1;
+
+  &:hover {
+    background: darken(#ccc, 15%);
+  }
+}
+
+.testimonials-swiper .swiper-pagination-bullet-active {
+  background: var.$clr-primary !important;
+}
+
+// Editor styles
+.testimonials-editor-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.wp-block-myblocks-testimonial-card {
+  flex: 0 0 calc(50% - 10px);
+  min-width: 300px;
 }

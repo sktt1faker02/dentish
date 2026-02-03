@@ -1,0 +1,37 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "myblocks/testimonial-card",
+  "version": "0.1.0",
+  "title": "Testimonial Card",
+  "category": "widgets",
+  "icon": "admin-comments",
+  "description": "A single testimonial card with quote, image, name and location",
+  "parent": ["myblocks/testimonials"],
+  "attributes": {
+    "quote": {
+      "type": "string",
+      "default": ""
+    },
+    "name": {
+      "type": "string",
+      "default": ""
+    },
+    "location": {
+      "type": "string",
+      "default": ""
+    },
+    "imageId": {
+      "type": "number",
+      "default": 0
+    },
+    "imageUrl": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "supports": {
+    "html": false
+  },
+  "editorScript": "file:./index.js"
+}
