@@ -51,3 +51,27 @@ function myblocks_myheader_block_init()
     register_block_type(__DIR__ . '/build/pricing-card');
 }
 add_action('init', 'myblocks_myheader_block_init');
+
+
+// 1. Disable the generation of all extra image sizes
+add_filter('intermediate_image_sizes_advanced', 'remove_default_image_sizes');
+function remove_default_image_sizes($sizes)
+{
+    // Core default sizes
+    unset($sizes['thumbnail']);
+    unset($sizes['medium']);
+    unset($sizes['medium_large']);
+    unset($sizes['large']);
+
+    // High-res / Retina sizes (1536x1536 and 2048x2048)
+    unset($sizes['1536x1536']);
+    unset($sizes['2048x2048']);
+
+    return $sizes;
+}
+
+// 2. Disable the "-scaled" image generation (Big Image Threshold)
+add_filter('big_image_size_threshold', '__return_false');
+
+// 3. Stop potential 768px (medium_large) generation
+update_option('medium_large_size_w', 0);
