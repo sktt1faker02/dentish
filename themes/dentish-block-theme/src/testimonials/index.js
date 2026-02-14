@@ -7,16 +7,14 @@ function Save({ attributes }) {
   const { autoplay, autoplaySpeed } = attributes;
 
   return (
-    <div
-      className="testimonials-block"
-      data-autoplay={autoplay}
-      data-autoplay-speed={autoplaySpeed}
-    >
-      <div className="swiper testimonials-swiper">
-        <div className="swiper-wrapper">
-          <InnerBlocks.Content />
+    <div className="bg-light-green">
+      <div className="testimonials-block" data-autoplay={autoplay} data-autoplay-speed={autoplaySpeed}>
+        <div className="swiper testimonials-swiper">
+          <div className="swiper-wrapper">
+            <InnerBlocks.Content />
+          </div>
+          <div className="swiper-pagination"></div>
         </div>
-        <div className="swiper-pagination"></div>
       </div>
     </div>
   );

@@ -25,6 +25,7 @@
         }
       }
     },
+    "useRootPaddingAwareAlignments": true,
     "layout": {
       "contentSize": "840px",
       "wideSize": "1200px"
@@ -61,6 +62,16 @@
           "slug": "white"
         }
       ]
+    }
+  },
+  "styles": {
+    "spacing": {
+      "padding": {
+        "top": "0",
+        "right": "20px",
+        "bottom": "0",
+        "left": "20px"
+      }
     }
   }
 }

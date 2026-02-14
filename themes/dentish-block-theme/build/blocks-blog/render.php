@@ -1,4 +1,4 @@
-<div class="bg-light-green">
+<div class="bg-light-green blog-container">
 
 
     <div class="blog-grid section-spacing-sides">
@@ -36,4 +36,9 @@
         wp_reset_postdata();
         ?>
     </div>
+
+    <?php if (is_page(29) && $homeBlogGrid->max_num_pages > 1): ?>
+
+        <button id="load-more" data-page="1" class="primary-btn blog-see-more">See More</button>
+    <?php endif; ?>
 </div>

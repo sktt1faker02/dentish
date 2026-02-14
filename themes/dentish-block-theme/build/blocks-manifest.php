@@ -42,6 +42,13 @@ return array(
 		),
 		'editorScript' => 'file:./index.js'
 	),
+	'generic-content' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'myblocks/generic-content',
+		'title' => 'Generic Content',
+		'editorScript' => 'file:./index.js'
+	),
 	'generic-heading' => array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
 		'apiVersion' => 3,

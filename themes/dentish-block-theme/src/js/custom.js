@@ -26,3 +26,42 @@ if (mobileNav && mainNav) {
     }
   });
 }
+
+jQuery(document).ready(function ($) {
+  $("#load-more").on("click", function () {
+    let btnLoadMore = $(this);
+    let page = btnLoadMore.data("page");
+    page++;
+
+    // Create 3 skeleton placeholders
+    const skeletonHTML = `
+      <article class="blog-item-skeleton">
+        <div class="skeleton-block skeleton-image"></div>
+        <div class="skeleton-block skeleton-date"></div>
+        <div class="skeleton-block skeleton-title"></div>
+        <div class="skeleton-block skeleton-link"></div>
+      </article>`;
+    const skeletons = $(skeletonHTML.repeat(3));
+    $(".blog-grid").append(skeletons);
+
+    $.ajax({
+      url: blog_ajax.ajax_url,
+      type: "POST",
+      dataType: "json",
+      data: { action: "load_more_posts", page: page },
+      success: function (response) {
+        skeletons.remove();
+        if (response.html) {
+          $(".blog-grid").append(response.html);
+          btnLoadMore.data("page", page);
+        }
+        if (!response.has_more) {
+          btnLoadMore.hide();
+        }
+      },
+      error: function () {
+        skeletons.remove();
+      },
+    });
+  });
+});

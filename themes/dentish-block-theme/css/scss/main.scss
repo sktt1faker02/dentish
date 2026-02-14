@@ -18,6 +18,11 @@ body.no-scroll {
   }
 }
 
+.page:not(.page-id-22) .header-block,
+.single-post .header-block {
+  border-bottom: 1px solid #ccc;
+}
+
 .main-header {
   display: flex;
   justify-content: space-between;
@@ -714,7 +719,27 @@ Hero Section
   }
 }
 
+.page:not(.page-id-22) .our-services .services-hero-img {
+  display: block;
+}
+
+.page:not(.page-id-22) .our-services-list {
+  @media (min-width: 1025px) {
+    margin-top: 0;
+  }
+}
+
 /* Blog Section */
+
+.page:not(.page-id-22) .blog-container {
+  background: var.$clr-white;
+}
+
+@media (min-width: 1024px) {
+  .blog-container {
+    padding-bottom: 60px;
+  }
+}
 
 .blog-grid {
   display: grid;
@@ -753,13 +778,78 @@ Hero Section
 
   @media (min-width: 1025px) {
     padding-top: 2rem;
-    padding-bottom: 60px;
+
     // padding-inline: 0;
   }
 
   @media (min-width: 1120px) {
     padding-inline: 0;
   }
+
+  .blog-item-skeleton {
+    display: flex;
+    flex-direction: column;
+    max-width: 335px;
+    margin-inline: auto;
+    gap: 1rem;
+    box-shadow: 0px 1px 10px 0px rgba(188, 188, 188, 0.25);
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: var.$clr-white;
+
+    .skeleton-block {
+      background: #e0e0e0;
+      border-radius: 4px;
+      position: relative;
+      overflow: hidden;
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+        animation: skeleton-wave 1.5s infinite;
+      }
+    }
+
+    .skeleton-image {
+      width: 100%;
+      aspect-ratio: 16/9;
+    }
+
+    .skeleton-date {
+      width: 80px;
+      height: 10px;
+    }
+
+    .skeleton-title {
+      width: 90%;
+      height: 20px;
+    }
+
+    .skeleton-link {
+      width: 70px;
+      height: 16px;
+    }
+  }
+}
+
+@keyframes skeleton-wave {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.blog-see-more {
+  display: block;
+  margin-inline: auto;
+  width: fit-content;
+  min-width: 130px;
+  background: none;
+  cursor: pointer;
 }
 
 @media (max-width: 767px) {
@@ -981,4 +1071,53 @@ Hero Section
 .wp-block-myblocks-testimonial-card {
   flex: 0 0 calc(50% - 10px);
   min-width: 300px;
+}
+
+// Generic Content Block
+
+.generic-content {
+  p {
+    font-size: 16px;
+
+    @media (min-width: 1025px) {
+      font-size: 18px;
+    }
+  }
+
+  h1 {
+    margin-bottom: 1.5rem;
+    max-width: 30ch;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .wp-block-post-featured-image img {
+    margin-bottom: 2rem;
+    max-width: 700px;
+    margin-inline: auto;
+  }
+  h2,
+  h3,
+  h4,
+  p {
+    margin-bottom: 1rem;
+  }
+
+  h2 + p,
+  h3 + p {
+    margin-bottom: 1rem;
+  }
+
+  ul {
+    margin-top: 0;
+    padding-left: 20px;
+    font-size: 16px;
+    @media (min-width: 1025px) {
+      font-size: 18px;
+    }
+  }
+}
+
+.page-id-31 .generic-intro {
+  // margin-bottom: 2rem;
 }
