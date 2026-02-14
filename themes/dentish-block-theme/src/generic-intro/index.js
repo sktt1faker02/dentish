@@ -6,8 +6,10 @@ import metadata from "./block.json";
 registerBlockType(metadata.name, {
   edit: Edit,
   save: (props) => {
+    const spacingClasses = `${props.attributes.addSpaceTop ? "space-top" : ""} ${props.attributes.addSpaceBottom ? "space-bottom" : ""}`;
+
     return (
-      <div className={`generic-intro section-spacing bg-${props.attributes.colorName || "reset"}`}>
+      <div className={`generic-intro section-spacing ${spacingClasses} bg-${props.attributes.colorName || "reset"}`}>
         <InnerBlocks.Content />
       </div>
     );

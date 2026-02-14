@@ -12,6 +12,12 @@ body.no-scroll {
   overflow: hidden;
 }
 
+.header-block {
+  @media (min-width: 1025px) {
+    background-color: var.$clr-light-green;
+  }
+}
+
 .main-header {
   display: flex;
   justify-content: space-between;
@@ -123,6 +129,68 @@ body.no-scroll {
     pointer-events: none;
     transition: opacity 0.3s ease;
   }
+
+  @media (min-width: 1024px) {
+    padding-inline: 40px;
+    padding-block: 2rem;
+
+    button {
+      display: none;
+    }
+
+    .main-nav {
+      all: unset;
+    }
+
+    .navigation-logo {
+      display: none;
+    }
+
+    #menu-primary-menu {
+      padding-top: 0;
+      padding-left: 0;
+      display: flex;
+      gap: 2.5rem;
+    }
+
+    .main-menu a {
+      color: var.$clr-black;
+      position: relative;
+    }
+
+    .main-menu a:hover::after {
+      width: 100%;
+      left: 0;
+    }
+
+    .main-menu a::after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 1px;
+      background-color: var.$clr-primary;
+      transition:
+        width 0.3s,
+        left 0.3s;
+      position: absolute;
+      left: 50%;
+      bottom: -4px;
+    }
+    .current-menu-item > a {
+      &::after {
+        width: 100%;
+        left: 0;
+      }
+    }
+
+    .main-menu li:not(:last-child) {
+      margin-bottom: 0;
+    }
+  }
+
+  @media (min-width: 1025px) {
+    padding-inline: 0;
+  }
 }
 
 // .admin-bar .main-header {
@@ -130,10 +198,13 @@ body.no-scroll {
 // }
 
 .main-footer {
-  padding: 1.25rem;
-  display: grid;
-  gap: 2rem;
   background-color: var.$clr-light-green;
+
+  .main-footer-inner {
+    display: grid;
+    gap: 2rem;
+    padding: 1.25rem;
+  }
 
   h4 {
     font-size: 14px;
@@ -228,6 +299,34 @@ body.no-scroll {
     text-align: center;
     font-size: 12px;
     opacity: 0.4;
+    border-top: 1px solid rgba(0, 0, 0, 0.6);
+    /* padding-top: 1rem; */
+    padding-block: 1rem;
+    margin-top: 1rem;
+  }
+
+  @media (min-width: 1024px) {
+    .main-footer-inner {
+      grid-template-columns: 275px 120px repeat(2, 1fr);
+      padding-inline: 40px;
+    }
+
+    .footer-col-4 {
+      align-items: flex-start;
+    }
+
+    .footer-copyright {
+      padding-block: 2rem;
+    }
+  }
+
+  @media (min-width: 1140px) {
+    .main-footer-inner {
+      grid-template-columns: 2fr 1fr 2fr 1fr;
+      max-width: 1040px;
+      margin-inline: auto;
+      padding-inline: 0;
+    }
   }
 }
 
@@ -249,6 +348,33 @@ Generic Intro
     color: var.$clr-secondary;
     text-transform: uppercase;
   }
+
+  @media (min-width: 1025px) {
+    h2 {
+      text-wrap-style: pretty;
+      max-width: 690px;
+      margin-inline: auto;
+    }
+
+    p {
+      max-width: 690px;
+      margin-inline: auto;
+    }
+  }
+}
+
+@media (min-width: 1025px) {
+  .generic-intro {
+    &.space-top {
+      padding-top: 80px;
+      padding-bottom: 0 !important;
+    }
+
+    &.space-bottom {
+      padding-top: 0 !important;
+      padding-bottom: 80px;
+    }
+  }
 }
 
 /* 
@@ -263,7 +389,7 @@ Hero Section
   h1,
   h2,
   h3 {
-    text-align: center;
+    // text-align: left;
     color: var.$clr-white;
   }
 
@@ -272,9 +398,6 @@ Hero Section
     flex-direction: column;
     align-items: center;
     gap: 1.5rem;
-    color: var.$clr-white;
-    text-align: center;
-    padding-inline: 20px;
 
     span {
       font-size: 1rem;
@@ -282,6 +405,22 @@ Hero Section
       text-transform: uppercase;
       color: var.$clr-secondary;
     }
+
+    @media (min-width: 1024px) {
+      flex-direction: row;
+      background: url(http://dentish.local/wp-content/uploads/2026/02/hero-desktop-01.webp) no-repeat right bottom;
+      background-size: contain;
+    }
+  }
+
+  .hero-content-col-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    color: #fff;
+    text-align: center;
+    padding-inline: 20px;
   }
 
   a {
@@ -293,10 +432,13 @@ Hero Section
     list-style: none;
     padding: 0;
     margin-top: 10px;
+    align-self: flex-start;
+    color: #fff;
 
     li {
       position: relative;
       padding-left: 1.75rem;
+      font-size: 12px;
 
       &::before {
         content: "";
@@ -316,11 +458,69 @@ Hero Section
       margin-bottom: 12px;
     }
   }
+
+  @media (min-width: 1024px) {
+    padding-top: 0;
+    margin-inline: 40px;
+    box-shadow: unset;
+    margin-bottom: 80px;
+
+    .hero-content-col-1 {
+      max-width: 515px;
+      padding-block: 80px;
+      padding-left: 40px;
+      align-items: flex-start;
+      text-align: left;
+
+      p {
+        text-align: left;
+      }
+    }
+
+    .hero-content-col-2 {
+      display: none;
+    }
+  }
+
+  @media (min-width: 1025px) {
+    // margin-inline: 0;
+    margin-bottom: 0;
+
+    .hero-content-col-1 {
+      padding-left: 80px;
+    }
+  }
+}
+
+.home-hero-bg {
+  @media (min-width: 1025px) {
+    background-color: var.$clr-light-green;
+
+    .front-page-hero {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.not-hero-bg {
+  @media (min-width: 1025px) {
+    padding-block: 80px;
+  }
 }
 
 .not-hero {
   .hero-content {
     gap: 1rem;
+
+    @media (min-width: 1024px) {
+      background: url(http://dentish.local/wp-content/uploads/2025/12/online-register.webp) no-repeat right center;
+    }
+  }
+
+  .hero-content-col-1 {
+    @media (min-width: 1024px) {
+      align-items: flex-start;
+    }
   }
 
   a {
@@ -332,6 +532,10 @@ Hero Section
 
   img {
     margin-top: -3.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    padding-bottom: 0;
   }
 }
 
@@ -375,6 +579,10 @@ Hero Section
     align-items: center;
     flex-direction: column;
     gap: 2rem;
+
+    @media (min-width: 1025px) {
+      gap: 3rem;
+    }
   }
 
   .two-column-content {
@@ -383,6 +591,12 @@ Hero Section
     gap: 1rem;
     align-items: center;
     text-align: center;
+
+    @media (min-width: 1024px) {
+      align-items: flex-start;
+      text-align: left;
+    }
+
     span {
       font-size: 1rem;
       font-weight: var.$fw-medium;
@@ -394,6 +608,10 @@ Hero Section
   img {
     height: 300px;
     object-fit: contain;
+
+    @media (min-width: 1024px) {
+      height: auto;
+    }
   }
 
   @media (min-width: 768px) {
@@ -415,6 +633,28 @@ Hero Section
 .our-services {
   .our-services-intro {
     margin-bottom: 2.5rem;
+
+    @media (min-width: 1025px) {
+      max-width: 630px;
+      margin-inline: auto;
+
+      h2 {
+        max-width: 430px;
+        text-wrap-style: pretty;
+      }
+    }
+  }
+
+  .services-hero-img {
+    display: none;
+
+    @media (min-width: 1025px) {
+      display: block;
+
+      img {
+        margin: auto;
+      }
+    }
   }
 
   .our-services-intro,
@@ -431,11 +671,15 @@ Hero Section
     gap: 11px;
     justify-content: center;
     flex-wrap: wrap;
+
+    @media (min-width: 1025px) {
+      margin-top: -100px;
+    }
   }
 
   .service-item {
     max-width: 260px;
-    margin-inline: auto;
+    // margin-inline: auto;
     box-shadow: var.$drop-shadow;
     padding-inline: 1rem;
     padding-block: 2rem;
@@ -476,8 +720,10 @@ Hero Section
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 11px;
-  background: var.$clr-light-green;
+
   padding-bottom: 40px;
+  max-width: 750px;
+  margin-inline: auto;
 
   .blog-item {
     display: flex;
@@ -499,6 +745,21 @@ Hero Section
       font-weight: var.$fw-bold;
     }
   }
+
+  @media (min-width: 1024px) {
+    max-width: 1040px;
+    // padding-inline: 40px;
+  }
+
+  @media (min-width: 1025px) {
+    padding-top: 2rem;
+    padding-bottom: 60px;
+    // padding-inline: 0;
+  }
+
+  @media (min-width: 1120px) {
+    padding-inline: 0;
+  }
 }
 
 @media (max-width: 767px) {
@@ -519,10 +780,18 @@ Hero Section
 /* Pricing Card Block */
 
 .pricing-container {
-  display: grid;
+  display: flex;
   gap: 1rem;
   padding-inline: var(--spacing-page-sides);
   padding-bottom: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  @media (min-width: 1025px) {
+    padding-inline: 0;
+    max-width: 1040px;
+    margin-inline: auto;
+  }
 }
 
 .pricing-card {
@@ -536,7 +805,7 @@ Hero Section
   gap: 1rem;
   align-items: center;
   text-align: center;
-  max-width: 340px;
+  max-width: 336px;
   margin-inline: auto;
 
   .price-label {
@@ -561,6 +830,7 @@ Hero Section
       position: relative;
       padding-left: 1.75rem;
       margin-bottom: 12px;
+      font-size: 12px;
 
       &::before {
         content: "";
@@ -576,6 +846,10 @@ Hero Section
       }
     }
   }
+
+  @media (min-width: 768px) {
+    margin-inline: initial;
+  }
 }
 
 /* Testimonials Carousel - Swiper.js */
@@ -585,11 +859,29 @@ Hero Section
   overflow: hidden;
   background: var.$clr-light-green;
   padding-bottom: var(--section-pb);
+
+  @media (min-width: 768px) {
+    padding-inline: 40px;
+  }
+
+  @media (min-width: 1025px) {
+    padding-top: 2rem;
+  }
+
+  @media (min-width: 1120px) {
+    padding-inline: 0;
+    max-width: 1040px;
+    margin-inline: auto;
+  }
 }
 
 .testimonials-swiper {
   position: relative;
   padding-bottom: 60px !important;
+
+  @media (min-width: 1024px) {
+    padding-bottom: 0px !important;
+  }
 }
 
 // Individual testimonial card
@@ -671,7 +963,7 @@ Hero Section
   opacity: 1;
 
   &:hover {
-    background: darken(#ccc, 15%);
+    // background: darken(#ccc, 15%);
   }
 }
 

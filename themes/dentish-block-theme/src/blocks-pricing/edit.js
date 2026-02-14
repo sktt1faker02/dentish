@@ -3,7 +3,7 @@ import { useBlockProps, InnerBlocks, InspectorControls } from "@wordpress/block-
 export default function Edit(props) {
   return (
     <div {...useBlockProps()}>
-      <div className="pricing-container">
+      <div className="pricing-container desktop-container">
         <InnerBlocks allowedBlocks={["myblocks/pricing-card"]} />
       </div>
     </div>

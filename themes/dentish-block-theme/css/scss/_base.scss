@@ -109,6 +109,10 @@ a.arrow-btn {
 
 .section-spacing {
   padding: var(--section-spacing);
+
+  @media (min-width: 1025px) {
+    padding-inline: 0;
+  }
 }
 
 .section-spacing.not-hero {
@@ -143,4 +147,17 @@ span.label {
   font-weight: var.$fw-medium;
   color: var.$clr-secondary;
   text-transform: uppercase;
+}
+
+@media (min-width: 1025px) {
+  .desktop-container {
+    max-width: var.$width-container;
+    margin-inline: 40px !important;
+  }
+}
+
+@media (min-width: 1120px) {
+  .desktop-container {
+    margin-inline: auto !important;
+  }
 }

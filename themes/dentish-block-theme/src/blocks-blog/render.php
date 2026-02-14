@@ -1,39 +1,39 @@
-<div class="blog-grid section-spacing-sides">
-
-    <?php
-    $homeBlogGrid = new WP_Query(array(
-        'post_type' => 'post',
-        'posts_per_page' => 3,
-        'orderby' => 'date',
-    ));
+<div class="bg-light-green">
 
 
-    ?>
-
-    <?php while ($homeBlogGrid->have_posts()): $homeBlogGrid->the_post(); ?>
+    <div class="blog-grid section-spacing-sides">
 
         <?php
-        $featured_image_url = get_the_post_thumbnail_url(get_the_ID(), 'featured-size');
+        $homeBlogGrid = new WP_Query(array(
+            'post_type' => 'post',
+            'posts_per_page' => 3,
+            'orderby' => 'date',
+        ));
+
+
         ?>
-        <article class="blog-item">
-            <a href="<?php echo get_permalink(); ?>">
-                <img src="<?php echo esc_url($featured_image_url); ?>" alt="featured image">
-            </a>
 
-            <span class="post-date"><?php echo get_the_date('M d, Y'); ?></span>
+        <?php while ($homeBlogGrid->have_posts()): $homeBlogGrid->the_post(); ?>
 
-            <h3> <a href="<?php echo get_permalink(); ?>"><?php echo esc_html(get_the_title()); ?> </a></h3>
+            <?php
+            $featured_image_url = get_the_post_thumbnail_url(get_the_ID(), 'featured-size');
+            ?>
+            <article class="blog-item">
+                <a href="<?php echo get_permalink(); ?>">
+                    <img src="<?php echo esc_url($featured_image_url); ?>" alt="featured image">
+                </a>
 
-            <a class="arrow-btn" href="<?php echo get_permalink(); ?>">
-                Read more
-            </a>
+                <span class="post-date"><?php echo get_the_date('M d, Y'); ?></span>
 
-        </article>
-    <?php endwhile;
-    wp_reset_postdata();
-    ?>
+                <h3> <a href="<?php echo get_permalink(); ?>"><?php echo esc_html(get_the_title()); ?> </a></h3>
 
+                <a class="arrow-btn" href="<?php echo get_permalink(); ?>">
+                    Read more
+                </a>
 
-
-
+            </article>
+        <?php endwhile;
+        wp_reset_postdata();
+        ?>
+    </div>
 </div>

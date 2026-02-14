@@ -1,6 +1,16 @@
 import { PanelBody, ToggleControl } from "@wordpress/components";
 import { useBlockProps, InnerBlocks, InspectorControls } from "@wordpress/block-editor";
-import ServerSideRender from "@wordpress/server-side-render";
+
+const TEMPLATE = [
+  ["core/group", { className: "hero-content-col-1" }, [
+    ["myblocks/generic-heading", {}],
+    ["core/paragraph", {}],
+    ["myblocks/generic-button", {}],
+  ]],
+  ["core/group", { className: "hero-content-col-2" }, [
+    ["myblocks/generic-image", {}],
+  ]],
+];
 
 export default function Edit(props) {
   return (
@@ -10,9 +20,9 @@ export default function Edit(props) {
           <ToggleControl label="Enable Hero Banner" checked={props.attributes.isHero} onChange={(value) => props.setAttributes({ isHero: value })} />
         </PanelBody>
       </InspectorControls>
-      <section className={`front-page-hero  ${props.attributes.isHero ? "section-pt" : "section-spacing"}`}>
+      <section className={`front-page-hero ${props.attributes.isHero ? "section-pt" : "section-spacing"}`}>
         <div className="hero-content">
-          <InnerBlocks allowedBlocks={["myblocks/generic-heading", "core/paragraph", "myblocks/generic-button", "myblocks/generic-image", "core/list"]} />
+          <InnerBlocks template={TEMPLATE} />
         </div>
       </section>
     </div>

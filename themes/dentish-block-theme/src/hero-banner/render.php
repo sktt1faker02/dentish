@@ -1,11 +1,14 @@
 <?php
 
-$spacingClass = $attributes['isHero'] ? 'section-pt' : 'section-spacing not-hero';
+$spacingClass = $attributes['isHero'] ? 'section-pt home-hero' : 'section-spacing not-hero';
+$isHeroBg = $attributes['isHero'] ? "home-hero-bg" : "not-hero-bg";
 ?>
 
-<section class="front-page-hero <?php echo $spacingClass; ?>">
-	<div class="hero-content">
-		<?php echo $content; ?>
-	</div>
 
-</section>
+<div class="<?php echo $isHeroBg; ?>">
+	<section class="front-page-hero desktop-container  <?php echo $spacingClass; ?>">
+		<div class="hero-content">
+			<?php echo $content; ?>
+		</div>
+	</section>
+</div>

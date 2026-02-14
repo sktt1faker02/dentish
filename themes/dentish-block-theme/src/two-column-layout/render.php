@@ -26,7 +26,7 @@ if ($reverse) {
 
 
 <section class="<?php echo esc_attr($section_classes); ?>">
-    <div class="<?php echo esc_attr($container_classes); ?>">
+    <div class="desktop-container <?php echo esc_attr($container_classes); ?>">
 
         <div class="two-column-content">
             <?php if ($label) : ?>

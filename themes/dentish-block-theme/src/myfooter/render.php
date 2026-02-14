@@ -1,5 +1,6 @@
 <div class="main-footer">
-	<div class="footer-col-1">
+	<div class="main-footer-inner">
+<div class="footer-col-1">
 		<a class="footer-logo" href="http://dentish.local/">
 			<img src="http://dentish.local/wp-content/uploads/2025/12/Dentish-icon.svg" alt="Dentish">
 			<span>Dentish</span>
@@ -52,6 +53,8 @@
 		<a class="secondary-btn" href="">Book an appointment now</a>
 	</div>
 
+	</div>
+	
 	<p class="footer-copyright">&copy; All rights reserved. Dentish <?php echo date('Y'); ?></p>
 
 

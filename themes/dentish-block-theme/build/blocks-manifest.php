@@ -94,6 +94,14 @@ return array(
 			'colorName' => array(
 				'type' => 'string',
 				'default' => 'primary'
+			),
+			'addSpaceTop' => array(
+				'type' => 'boolean',
+				'default' => false
+			),
+			'addSpaceBottom' => array(
+				'type' => 'boolean',
+				'default' => false
 			)
 		),
 		'editorScript' => 'file:./index.js'

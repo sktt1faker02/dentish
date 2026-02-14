@@ -38,7 +38,7 @@ const ourColors = [{
   \**************************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"myblocks/generic-intro","version":"0.1.0","title":"Generic Intro","attributes":{"colorName":{"type":"string","default":"primary"}},"editorScript":"file:./index.js"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"myblocks/generic-intro","version":"0.1.0","title":"Generic Intro","attributes":{"colorName":{"type":"string","default":"primary"},"addSpaceTop":{"type":"boolean","default":false},"addSpaceBottom":{"type":"boolean","default":false}},"editorScript":"file:./index.js"}');
 
 /***/ },
 
@@ -64,15 +64,19 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function Edit(props) {
-  // const handleChangeTopSpace = (value) => {
-  //   console.log(value);
-  //   props.setAttributes({ addSpaceTop: value });
-  // };
-
-  // const handleChangeBottomSpace = (value) => {
-  //   props.setAttributes({ addSpaceBottom: value });
-  // };
-
+  const handleChangeTopSpace = value => {
+    // console.log(value);
+    props.setAttributes({
+      addSpaceTop: value
+    });
+  };
+  const handleChangeBottomSpace = value => {
+    props.setAttributes({
+      addSpaceBottom: value
+    });
+    // console.log(value);
+  };
+  const spacingClasses = `${props.attributes.addSpaceTop ? "space-top" : ""} ${props.attributes.addSpaceBottom ? "space-bottom" : ""}`;
   const currentColorValue = _inc_ourColors__WEBPACK_IMPORTED_MODULE_0__["default"].find(c => c.name === props.attributes.colorName)?.color;
   console.log(currentColorValue);
   const handleColorChange = colorValue => {
@@ -84,10 +88,10 @@ function Edit(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)(),
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
         title: "Generic Intro Settings",
         initialOpen: true,
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelRow, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelRow, {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ColorPalette, {
             disableCustomColors: true,
             clearable: true,
@@ -95,10 +99,22 @@ function Edit(props) {
             value: currentColorValue,
             onChange: handleColorChange
           })
-        })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelRow, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+            label: "Add Space on Top",
+            checked: props.attributes.addSpaceTop,
+            onChange: handleChangeTopSpace
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelRow, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+            label: "Add Space on Bottom",
+            checked: props.attributes.addSpaceBottom,
+            onChange: handleChangeBottomSpace
+          })
+        })]
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-      className: `generic-intro section-spacing bg-${props.attributes.colorName || "reset"}`,
+      className: `generic-intro section-spacing ${spacingClasses} bg-${props.attributes.colorName || "reset"}`,
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InnerBlocks, {
         allowedBlocks: ["myblocks/generic-heading", "core/paragraph"]
       })
@@ -245,8 +261,9 @@ __webpack_require__.r(__webpack_exports__);
 (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__.registerBlockType)(_block_json__WEBPACK_IMPORTED_MODULE_3__.name, {
   edit: _edit__WEBPACK_IMPORTED_MODULE_2__["default"],
   save: props => {
+    const spacingClasses = `${props.attributes.addSpaceTop ? "space-top" : ""} ${props.attributes.addSpaceBottom ? "space-bottom" : ""}`;
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: `generic-intro section-spacing bg-${props.attributes.colorName || "reset"}`,
+      className: `generic-intro section-spacing ${spacingClasses} bg-${props.attributes.colorName || "reset"}`,
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InnerBlocks.Content, {})
     });
   }
